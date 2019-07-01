@@ -719,7 +719,7 @@ include "navegacionPodo.php";
 							<input type="checkbox" class="form-check-input" value="Amputación">
 							Amputación
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="Amputacióndet" id="Amputacióndet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 							</select>
