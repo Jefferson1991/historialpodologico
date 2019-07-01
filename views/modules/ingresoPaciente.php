@@ -716,10 +716,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Amputación">
+							<input type="checkbox" class="form-check-input" value="Amputación" name="amputacion" id="amputacion">
 							Amputación
 							</label>
-							<select name="Amputacióndet" id="Amputacióndet" class="form-control" style="width: 120px;">
+							<select name="amputaciondet" id="amputaciondet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 							</select>
@@ -728,10 +728,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="HIPERQUERATOSIS">
+							<input type="checkbox" class="form-check-input" value="Dedos deformados" name="dedosDeformados" id="dedosDeformados">
 							Dedos deformados
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="dedosDeformadosDet" id="dedosDeformadosDet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 								<option value="Ambas">Ambas</option>
