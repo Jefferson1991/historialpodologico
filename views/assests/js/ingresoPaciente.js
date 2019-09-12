@@ -224,13 +224,111 @@ $("#btnGuardar").click(function(){
 $("#btnConsultar").click(function(){
 	var parametroBus = $("#parametroBus").val();
 	var parametro = {parametroBus:parametroBus};
+	console.log("parametroBus",parametroBus)
 	$.ajax({
-		url:"./views/ajax/PacienteAjax.php",
+		url:"views/ajax/PacienteAjax.php",
 		method: "POST",
 		data: parametro,
-		dataType: "text",
+		dataType: "json",
 		success:function(datos) {
-			$("#resultConsulta").html(datos);
+			if (datos) {
+
+				$("#nombrePaciente").val(datos['nombrePaciente']);
+				$("#noHistoria").val(datos['noHistoria']);
+				$("#fechaIngresoPacienteC").val(datos['fechaIngresoPaciente']);
+				$("#edadPaciente").val(datos['edadPaciente'])
+				$("#genero").val(datos['genero'])
+				$("#telefono").val(datos['telefono'])
+				$("#celular").val(datos['celular'])
+				$("#familiarPaciente").val(datos['familiarPaciente'])
+				$("#parentezcoPaciente").val(datos['parentezcoPaciente'])
+				$("#telFamiliar").val(datos['telFamiliar'])
+/* -------------------------------------------------------------------------- */
+/*                              Seccion Motivo consulta                              */
+/* -------------------------------------------------------------------------- */
+				$("#motivoCosulta").val(datos['motivoCosulta']);
+				$("#remite").val(datos['remite']);
+/* -------------------------------------------------------------------------- */
+/*                              Enfermedades actules                             */
+/* -------------------------------------------------------------------------- */
+				$("#enfermedadesDatos").val(datos["enfermedadesDatos"]);
+				$("#obsEnfActual").val(datos["obsEnfActual"]);
+/* -------------------------------------------------------------------------- */
+/*                           Antecedentes personales                          */
+/* -------------------------------------------------------------------------- */
+				$("#alergiaPac").val(datos["alergiaPac"]);
+				$("#alergiaPacTipo").val(datos["alergiaPacTipo"]);
+				$("#tipMedicamentoPact").val(datos["tipMedicamentoPact"]);
+				$("#otroMedicamento").val(datos["otroMedicamento"]);
+				$("#obsMedPaciente").val(datos["obsMedPaciente"]);
+				$("#enferFamiliarPac").val(datos["enferFamiliarPac"]);
+				$("#anteQuiPacient").val(datos["anteQuiPacient"]);
+/* -------------------------------------------------------------------------- */
+/*                         4. UBICACIÓN DE PATOLOGIAS:                        */
+/* -------------------------------------------------------------------------- */
+				$("#patologiaPaciente").val(datos["patologiaPaciente"]);
+				$("#otraPatologia").val(datos["otraPatologia"]);
+				$("#ayudaTenicaPaciente").val(datos["ayudaTenicaPaciente"]);
+				$("#hiperqueratosis").val(datos["hiperqueratosis"]+" en "+datos["hiperqueratosisMano"]);
+/* -------------------------------------------------------------------------- */
+/*                                   USO DE:                                  */
+/* -------------------------------------------------------------------------- */
+				$("#usoDeplantilla").val(datos["usoDeplantilla"]+" en el pie/pies -"+datos["detallePlantilla"]);
+				$("#separadorInt").val(datos["separadorInt"]+" en el pie/pies -"+datos["detalleSeparador"]);
+				$("#taloneras").val(datos["taloneras"]+" en el pie/pies -"+datos["dentalleTaloneras"])
+				$("#obsAyudTecniPacientePrenda").val("Observacion:  "+datos["obsAyudTecniPacientePrenda"])
+/* ------------------------------ ZONA PLANTAR: ----------------------------- */
+				$("#espolon").val(datos["espolon"] +"-"+datos["detalleEspolon"])
+				$("#fancitis").val(datos["fancitis"] +"-"+datos["detallefancitis"])
+				$("#hiperqueratosisPie").val(datos["hiperqueratosisPie"] +"-"+datos["detallehiperqueratosisPie"])
+				$("#Metatarsalgia").val(datos["Metatarsalgia"] +"-"+datos["detalleMetatarsalgia"])
+				$("#piePlano").val(datos["piePlano"] +"-"+datos["detallepiePlano"])
+				$("#verrugaPlantar").val(datos["verrugaPlantar"] +"-"+datos["detalleverrugaPlantar"])
+				$("#obsZonaPlantar").val("Observación:" +"-"+datos["obsZonaPlantar"])
+/* -------------------------------------------------------------------------- */
+/*                                  ORTEJOS:                                  */
+/* -------------------------------------------------------------------------- */
+				$("#Adactalina").val(datos["Adactalina"]);
+				$("#Anoniquia").val(datos["Anoniquia"]);
+				$("#Coiloniquia").val(datos["Coiloniquia"]);
+				$("#Exostosis").val(datos["Exostosis"]);
+				$("#Onicogrifosis").val(datos["Onicogrifosis"]);
+				$("#Onicorrexis").val(datos["Onicorrexis"]);
+				$("#obsGeneralPatologia").val(datos["obsGeneralPatologia"]);
+
+/* -------------------------------------------------------------------------- */
+/*                              5. PIE DIABETICO:                             */
+/* -------------------------------------------------------------------------- */
+				llenadoCapilar
+				llenadoCapilarDetalle
+				pulsopedio
+				pulsopedioDetalle
+				Temperatura
+				TemperaturaDet
+				Edemas
+				EdemasDet
+				Eritema
+				EritemaDet
+				Varices
+				VaricesDet
+
+
+
+
+
+
+
+
+
+
+
+
+
+			}else if(datos == false){
+				alert("Es posible que el campo de busqueda se encuentre vacio");
+				window.location = "consultaHistorial";
+			}
+			
 		}
 	});
 });

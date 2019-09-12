@@ -83,19 +83,16 @@ class HistorialController{
 				}
 			}
 		}
-		public function consultaHistoriaController()
-			{
-				if (isset($_POST["parametroBus"])) {
-					$parametroBus = array("parametroBus" => $_POST["parametroBus"]);
-
-					$postName = HistorialModel::consultaHistoriaModel($parametroBus,"historialpaciente");
-							echo "<h1>".$postName['idPaciente']."</h1>
-						         <h2>".$postName['noHistoria']."</h2>
-						         <h2>".$postName['nombrePaciente']."</h2>";
-			}else{
-				echo "No se realizo ninguna busqueda";
+		/*Busqueda en campo de texto devuelve ajax y despliega campo por campo */
+		public function consultaHistoriaController(){
+			
+			if (isset($_POST["parametroBus"])) {
+				$parametroBus = array("parametroBus" => $_POST["parametroBus"]);
+				$postName = HistorialModel::consultaHistoriaModel($parametroBus,"historialpaciente");
+				echo json_encode($postName);
+				}
 			}
-		}
+		/*CRUD completo con informe de historia */
 		public function consultaPacientesGeneralController()
 			{
 			   $consultaPacienteTable = HistorialModel::consultaPacientesGeneralModel("historialpaciente");
@@ -124,10 +121,9 @@ class HistorialController{
 						                     <div class="col-md-4 col-sm-offset-3 ">
 						                       <input type="text" class="form-control" value="'.$respuesta['idPaciente'].'" name="cmp_id_actualizar" value="">
 						                       <input type="text" class="form-control" value="'.$respuesta['nombrePaciente'].'" name="cmp_id_actualizar" value="">
-
 						                     </div>
 						                     <a href="templeReportesPaciente">
-											<button type="button" name="modalModificar" class="btn btn-danger btn-sm"><</button>
+											<button type="button" name="modalModificar" class="btn btn-danger btn-sm"></button>
 						                 </div>
 						               </div>';
 						            }else {

@@ -13,7 +13,7 @@ include "navegacionPodo.php";
 					<div class="col-md-12"><pre>DATOS GENERALES DEL PACIENTE:</pre></div>
 					<div class="col-md-2">
 						<pre class="blockquote-footer">Fecha de ingreso</pre>
-						    <input class="form-control" type="text" name="fechaIngresoPaciente" id="fechaIngresoPaciente">
+						<input class="form-control" type="text" name="fechaIngresoPaciente" id="fechaIngresoPaciente">
 				    </div>
 				    <div class="col-md-4">
 						<pre class="blockquote-footer">Numero de historia</pre>

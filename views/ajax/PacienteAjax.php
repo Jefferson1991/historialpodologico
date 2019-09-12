@@ -7,9 +7,12 @@ class AjaxPaciente{
 		 	   $guardarHistoria = HistorialController::ingresoHistorialController($namePost);
 		 	   echo $guardarHistoria;
          }
+      public $parametroBus;
 		  public function consultaAjaxPaciente(){
+             $aux = $this->parametroBus;
 				 	   $parametroBus = array("parametroBus" => $_POST["parametroBus"]);
-				 	   $guardarHistoria = HistorialController::consultaHistoriaController($parametroBus,"historialpaciente");
+             $guardarHistoria = HistorialController::consultaHistoriaController($aux,"historialpaciente");
+             
 		 }
 }
    if(isset($_POST["noHistoria"])){
