@@ -15,13 +15,12 @@ include "navegacionPodo.php";
 						</span>
 					</div>	
 			</div>
-		</div>
-		<hr>	
+	</div>
+	<hr>	
 				<?php
 				 $consultaIndividual = new HistorialController();
 				 $consultaIndividual -> consultaHistoriaController();
 				?>
-			
 				<div class="row">
 					<div class="col-md-12">
 						<div class="card">
@@ -250,46 +249,7 @@ include "navegacionPodo.php";
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header card bg-dark text-white">3. ANTECEDENTES PERSONALES Y FAMILIARES:</div>
-								<div class="card-body">
-										<div class="row">											
-											<div class="col-sm-6">
-											¿Tiene alguna alergia?
-											<input type="text"class="form-control" name="alergiaPac" id="alergiaPac" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Cual?
-											<input type="text"class="form-control" name="alergiaPacTipo" id="alergiaPacTipo" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Que tipo de medicamento toma ?
-											<input type="text"class="form-control" name="tipMedicamentoPact" id="tipMedicamentoPact" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Cual?
-											<input type="text"class="form-control" name="otroMedicamento" id="otroMedicamento" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Toma algun medicamento o anticoagulante?
-											<input type="text"class="form-control" name="obsMedPaciente" id="obsMedPaciente" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Antecedentes familiares de enfermedades?
-											<input type="text"class="form-control" name="enferFamiliarPac" id="enferFamiliarPac" disabled>
-											</div>
-											<div class="col-sm-6">
-											¿Tiene antecedentes quirurgicos?
-											<input type="text"class="form-control" name="anteQuiPacient" id="anteQuiPacient" disabled>
-											</div>
-										</div>
-								</div>
-							<!--<div class="card-footer ard bg-dark text-white">Campos ingresados por:</div>-->
-						</div>
-					</div>
-					
+				<div class="row">				
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header card bg-primary text-white">5. PIE DIABETICO:</div>
@@ -307,4 +267,4 @@ include "navegacionPodo.php";
 					</div>
 				</div>
 				<br><br><br><br>
-	</div>
+</div>
