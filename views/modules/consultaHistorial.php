@@ -254,10 +254,54 @@ include "navegacionPodo.php";
 						<div class="card">
 							<div class="card-header card bg-primary text-white">5. PIE DIABETICO:</div>
 								<div class="card-body">
-										<div class="row">											
-											<div class="col-sm-6">
-											Patologia
-											<input type="text"class="form-control" name="patologiaPaciente" id="patologiaPaciente" disabled>
+										<div class="row">
+											<div class="col-md-12">Exámen Vascular<hr></div>											
+											<div class="col-sm-2">
+											<p id="llenadoCapilar" name="llenadoCapilar"></p>
+											<input type="text"class="form-control" name="llenadoCapilarDetalle" id="llenadoCapilarDetalle" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="pulsopedio" name="pulsopedio"></p>
+											<input type="text"class="form-control" name="pulsopedioDetalle" id="pulsopedioDetalle" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="Temperatura" name="Temperatura"></p>
+											<input type="text"class="form-control" name="TemperaturaDet" id="TemperaturaDet" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="Edemas" name="Edemas"></p>
+											<input type="text"class="form-control" name="EdemasDet" id="EdemasDet" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="Eritema" name="Eritema"></p>
+											<input type="text"class="form-control" name="EritemaDet" id="EritemaDet" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="Varices" name="Varices"></p>
+											<input type="text"class="form-control" name="VaricesDet" id="VaricesDet" disabled>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">PIE:<hr></div>											
+											<div class="col-sm-2">
+											<p id="amputacion" name="amputacion"></p>
+											<input type="text"class="form-control" name="amputaciondet" id="amputaciondet" disabled>
+											</div>
+											<div class="col-sm-2">
+											<p id="dedosDeformados" name="dedosDeformados"></p>
+											<input type="text"class="form-control" name="dedosDeformadosDet" id="dedosDeformadosDet" disabled>
+											</div>											<div class="col-sm-2">
+											<p id="Helomasblandos" name="Helomasblandos"></p>
+											<input type="text"class="form-control" name="HelomasblandosDet" id="HelomasblandosDet" disabled>
+											</div>											<div class="col-sm-2">
+											<p id="Helomasduros" name="Helomasduros"></p>
+											<input type="text"class="form-control" name="HelomasdurosDet" id="HelomasdurosDet" disabled>
+											</div>											<div class="col-sm-2">
+											<p id="Piedeformado" name="Piedeformado"></p>
+											<input type="text"class="form-control" name="PiedeformadoDet" id="PiedeformadoDet" disabled>
+											</div>											<div class="col-sm-2">
+											<p id="Ulcera" name="Ulcera"></p>
+											<input type="text"class="form-control" name="UlceraDet" id="UlceraDet" disabled>
 											</div>
 										</div>
 	

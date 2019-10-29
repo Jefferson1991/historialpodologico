@@ -1,0 +1,64 @@
+var dedosDeformados = $("#dedosDeformados:checked").val();
+var dedosDeformadosDet = $("#dedosDeformadosDet").val();
+var Helomasblandos = $("#Helomasblandos:checked").val();
+var HelomasblandosDet = $("#HelomasblandosDet").val();
+var Helomasduros = $("#Helomasduros:checked").val();
+var HelomasdurosDet = $("#HelomasdurosDet").val();
+var Piedeformado = $("#Piedeformado:checked").val();
+var PiedeformadoDet = $("#PiedeformadoDet:checked").val();
+var Ulcera = $("#Ulcera").val();
+var UlceraDet = $("#UlceraDet").val();
+
+# ---------------------------------------------------------------------------- #
+#                                       s                                      #
+# ---------------------------------------------------------------------------- #
+
+dedosDeformados:dedosDeformados,
+dedosDeformadosDet:dedosDeformadosDet,
+Helomasblandos:Helomasblandos,
+HelomasblandosDet:HelomasblandosDet,
+Helomasduros:Helomasduros,
+HelomasdurosDet:HelomasdurosDet,
+Piedeformado:Piedeformado,
+PiedeformadoDet:PiedeformadoDet,
+Ulcera:Ulcera,
+UlceraDet:UlceraDet
+
+# ---------------------------------------------------------------------------- #
+#                                       s                                      #
+# ---------------------------------------------------------------------------- #
+
+$stmt -> bindParam(":dedosDeformados", $variables["dedosDeformados"]);
+$stmt -> bindParam(":dedosDeformadosDet", $variables["dedosDeformadosDet"]);
+$stmt -> bindParam(":Helomasblandos", $variables["Helomasblandos"]);
+$stmt -> bindParam(":HelomasblandosDet", $variables["HelomasblandosDet"]);
+$stmt -> bindParam(":Helomasduros", $variables["Helomasduros"]);
+$stmt -> bindParam(":HelomasdurosDet", $variables["HelomasdurosDet"]);
+$stmt -> bindParam(":Piedeformado", $variables["Piedeformado"]);
+$stmt -> bindParam(":PiedeformadoDet", $variables["PiedeformadoDet"]);
+$stmt -> bindParam(":Ulcera", $variables["Ulcera"]);
+$stmt -> bindParam(":UlceraDet", $variables["UlceraDet"]);
+
+# ---------------------------------------------------------------------------- #
+#                                       s                                      #
+# ---------------------------------------------------------------------------- #
+
+,dedosDeformados,dedosDeformadosDet,Helomasblandos,HelomasblandosDet,Helomasduros,HelomasdurosDet,Piedeformado,PiedeformadoDet,Ulcera,UlceraDet
+,:dedosDeformados,:dedosDeformadosDet,:Helomasblandos,:HelomasblandosDet,:Helomasduros,:HelomasdurosDet,:Piedeformado,:PiedeformadoDet,:Ulcera,:UlceraDet
+
+# ---------------------------------------------------------------------------- #
+#                                      ss                                      #
+# ---------------------------------------------------------------------------- #
+,                                   ,
+									"amputacion" => $_POST["amputacion"],
+									"amputaciondet" => $_POST["amputaciondet"]
+									"dedosDeformados" => $_POST["dedosDeformados"],
+									"dedosDeformadosDet" => $_POST["dedosDeformadosDet"],
+									"Helomasblandos" => $_POST["Helomasblandos"],
+									"HelomasblandosDet" => $_POST["HelomasblandosDet"],
+									"Helomasduros" => $_POST["Helomasduros"],
+									"HelomasdurosDet" => $_POST["HelomasdurosDet"],
+									"Piedeformado" => $_POST["Piedeformado"],
+									"PiedeformadoDet" => $_POST["PiedeformadoDet"],
+									"Ulcera" => $_POST["Ulcera"],
+									"UlceraDet" => $_POST["UlceraDet"]

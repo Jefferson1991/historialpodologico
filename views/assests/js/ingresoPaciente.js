@@ -73,7 +73,9 @@ $(document).ready(function(){
     });
     
 });
+
 $("#btnGuardar").click(function(){
+	
 	var noHistoria = $("#noHistoria").val();
 	var fechaIngresoPaciente = $("#fechaIngresoPaciente").val();
 	var nombrePaciente = $("#nombrePaciente").val();
@@ -139,7 +141,30 @@ $("#btnGuardar").click(function(){
 	var EritemaDet = $("#EritemaDet").val();
 	var Varices = $("#Varices:checked").val();
 	var VaricesDet = $("#VaricesDet").val();
-	
+	var amputacion = $("#amputacion:checked").val();
+	var amputaciondet = $("#amputaciondet").val();
+	var dedosDeformados = $("#dedosDeformados:checked").val();
+	var dedosDeformadosDet = $("#dedosDeformadosDet").val();
+	var Helomasblandos = $("#Helomasblandos:checked").val();
+	var HelomasblandosDet = $("#HelomasblandosDet").val();
+	var Helomasduros = $("#Helomasduros:checked").val();
+	var HelomasdurosDet = $("#HelomasdurosDet").val();
+	var Piedeformado = $("#Piedeformado:checked").val();
+	var PiedeformadoDet = $("#PiedeformadoDet").val();
+	var Ulcera = $("#Ulcera:checked").val();
+	var UlceraDet = $("#UlceraDet").val();
+	var vacunaTetanos = $("#vacunaTetanos:checked").val();
+	var vacunaTetanosDet = $("#vacunaTetanosDet").val();
+	var calzadoApropiado = $("#calzadoApropiado:checked").val();
+	var calzadoApropiadoDet = $("#calzadoApropiadoDet").val();
+	var medidasApropiadas = $("#medidasApropiadas:checked").val();
+	var medidasApropiadasDet = $("#medidasApropiadasDet").val();
+	var corteUnasAdecuado = $("#corteUnasAdecuado:checked").val();
+	var corteUnasAdecuadoDet = $("#corteUnasAdecuadoDet").val();
+	var higinePie = $("#higinePie").val();
+	var higinePieDet = $("#higinePieDet").val();
+	var caminaDescalzo = $("#caminaDescalzo").val();
+	var caminaDescalzoDet = $("#caminaDescalzoDet").val();
 	var parametros = {noHistoria:noHistoria,
 					  fechaIngresoPaciente:fechaIngresoPaciente,
 					  nombrePaciente:nombrePaciente,
@@ -204,18 +229,41 @@ $("#btnGuardar").click(function(){
 					  Eritema:Eritema,
 					  EritemaDet:EritemaDet,
 					  Varices:Varices,
-					  VaricesDet:VaricesDet};
+					  VaricesDet:VaricesDet,
+					  amputacion:amputacion,
+					  amputaciondet:amputaciondet,
+					  dedosDeformados:dedosDeformados,
+					  dedosDeformadosDet:dedosDeformadosDet,
+					  Helomasblandos:Helomasblandos,
+					  HelomasblandosDet:HelomasblandosDet,
+					  Helomasduros:Helomasduros,
+					  HelomasdurosDet:HelomasdurosDet,
+					  Piedeformado:Piedeformado,
+					  PiedeformadoDet:PiedeformadoDet,
+					  Ulcera:Ulcera,
+					  UlceraDet:UlceraDet,
+					  vacunaTetanos:vacunaTetanos,
+					  vacunaTetanosDet:vacunaTetanosDet,
+					  calzadoApropiado:calzadoApropiado,
+					  calzadoApropiadoDet:calzadoApropiadoDet,
+					  medidasApropiadas:medidasApropiadas,
+					  medidasApropiadasDet:medidasApropiadasDet,
+					  corteUnasAdecuado:corteUnasAdecuado,
+					  corteUnasAdecuadoDet:corteUnasAdecuadoDet,
+					  higinePie:higinePie,
+					  higinePieDet:higinePieDet,
+					  caminaDescalzo:caminaDescalzo,
+					  caminaDescalzoDet:caminaDescalzoDet};
+					  
+					 
 	$.ajax({
 		url:"./views/ajax/PacienteAjax.php",
 		method: "POST",
 		data: parametros,
 		success:function(datos) {
-			console.log("datos",datos);
 			if(datos > 0){
-				console.log("datos",datos);
 				swal("El paciente ya existe");
 			}else{
-				console.log("datos",datos);
 				swal("Paciente registrado correctamente");
 			}
 		}
@@ -231,6 +279,7 @@ $("#btnConsultar").click(function(){
 		data: parametro,
 		dataType: "json",
 		success:function(datos) {
+			console.log("datos",datos);
 			if (datos) {
 
 				$("#nombrePaciente").val(datos['nombrePaciente']);
@@ -295,27 +344,39 @@ $("#btnConsultar").click(function(){
 				$("#Onicogrifosis").val(datos["Onicogrifosis"]);
 				$("#Onicorrexis").val(datos["Onicorrexis"]);
 				$("#obsGeneralPatologia").val(datos["obsGeneralPatologia"]);
-
 /* -------------------------------------------------------------------------- */
-/*                              5. PIE DIABETICO:                             */
+/*                              5. PIE DIABETICO: EXAMEN VASCULAR                             */
 /* -------------------------------------------------------------------------- */
-				llenadoCapilar
-				llenadoCapilarDetalle
-				pulsopedio
-				pulsopedioDetalle
-				Temperatura
-				TemperaturaDet
-				Edemas
-				EdemasDet
-				Eritema
-				EritemaDet
-				Varices
-				VaricesDet
-
-
-
-
-
+				$("#llenadoCapilar").html(datos["llenadoCapilar"]);
+				$("#pulsopedio").html(datos["pulsopedio"]);
+				$("#Temperatura").html(datos["Temperatura"]);
+				$("#Edemas").html(datos["Edemas"]);
+				$("#Eritema").html(datos["Eritema"]);
+				$("#Varices").html(datos["Varices"]);
+/* -------------------------------------------------------------------------- */
+/*                                     Detalle                                    */
+/* -------------------------------------------------------------------------- */
+				$("#llenadoCapilarDetalle").val(datos["llenadoCapilarDetalle"]);
+				$("#pulsopedioDetalle").val(datos["pulsopedioDetalle"]);
+				$("#TemperaturaDet").val(datos["TemperaturaDet"]);
+				$("#EdemasDet").val(datos["EdemasDet"]);
+				$("#EritemaDet").val(datos["EritemaDet"]);
+				$("#VaricesDet").val(datos["VaricesDet"]);
+/* -------------------------------------------------------------------------- */
+/*                              5. PIE DIABETICO: PIE                             */
+/* -------------------------------------------------------------------------- */
+					$("#amputacion").html(datos["amputacion"]);
+					$("#amputaciondet").val(datos["amputaciondet"]);
+					$("#dedosDeformados").html(datos["dedosDeformados"]);
+					$("#dedosDeformadosDet").val(datos["dedosDeformadosDet"]);
+					$("#Helomasblandos").html(datos["Helomasblandos"]);
+					$("#HelomasblandosDet").val(datos["HelomasblandosDet"]);
+					$("#Helomasduros").html(datos["Helomasduros"]);
+					$("#HelomasdurosDet").val(datos["HelomasdurosDet"]);
+					$("#Piedeformado").html(datos["Piedeformado"]);
+					$("#PiedeformadoDet").val(datos["PiedeformadoDet"]);
+					$("#Ulcera").html(datos["Ulcera"]);
+					$("#UlceraDet").val(datos["UlceraDet"]);
 
 
 

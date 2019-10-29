@@ -5,7 +5,6 @@ class AjaxPaciente{
 		 public function ingresoPacientesAjax (){		 
 	       $namePost = array("noHistoria" => $_POST);
 		 	   $guardarHistoria = HistorialController::ingresoHistorialController($namePost);
-		 	   echo $guardarHistoria;
          }
       public $parametroBus;
 		  public function consultaAjaxPaciente(){

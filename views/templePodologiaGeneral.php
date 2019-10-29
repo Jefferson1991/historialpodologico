@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="">
     <title>PODO SYSTEM </title>
-    
     <link rel="stylesheet" href="views/assests/css/bootstrap.css">
     <link rel="stylesheet" href="views/assests/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="views/assests/css/sweetalert.css">
@@ -18,7 +17,6 @@
             $( "#fechaIngresoPaciente" ).datepicker();
           } );
           </script>
-
 </head>
 <body class="container" style="background-color: gray;">
     <div>
@@ -30,7 +28,7 @@
                     $enlacesDePagina = new PlantillaController();
                     $enlacesDePagina -> enlacePaginaController();
                  ?>
-   </div>
+    </div>
     <script src="views/assests/js/bootstrap.min.js"></script>
     <script src="views/assests/js/jquery.dataTables.min.js"></script>
     <script src="views/assests/js/dataTables.bootstrap4.min.js"></script>

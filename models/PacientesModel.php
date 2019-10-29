@@ -2,9 +2,10 @@
 require_once 'conexion.php';
 class HistorialModel extends ConexionBD{
 		static public function ingresoHistoriaModel($variables, $tabla){
-			$stmt = ConexionBD::conectar()->prepare("INSERT INTO $tabla(noHistoria,fechaIngresoPaciente,nombrePaciente,edadPaciente,genero,telefono,celular,familiarPaciente,parentezcoPaciente,telFamiliar,motivoCosulta,remite,enfermedadesDatos,obsEnfActual,alergiaPac,alergiaPacTipo,tipMedicamentoPact,otroMedicamento,obsMedPaciente,enferFamiliarPac,anteQuiPacient,patologiaPaciente,otraPatologia,ayudaTenicaPaciente,hiperqueratosis,hiperqueratosisMano,usoDeplantilla,detallePlantilla,separadorInt,detalleSeparador,taloneras,dentalleTaloneras,obsAyudTecniPacientePrenda,espolon,detalleEspolon,fancitis,detallefancitis,hiperqueratosisPie,detallehiperqueratosisPie,Metatarsalgia,detalleMetatarsalgia,piePlano,detallepiePlano,verrugaPlantar,detalleverrugaPlantar,obsZonaPlantar,Adactalina,Anoniquia,Coiloniquia,Exostosis,Onicogrifosis,Onicorrexis,obsGeneralPatologia,llenadoCapilar,llenadoCapilarDetalle,pulsopedio,pulsopedioDetalle,Temperatura,TemperaturaDet,Edemas,EdemasDet,Eritema,EritemaDet,Varices,VaricesDet) 
+			$stmt = ConexionBD::conectar()->prepare("INSERT INTO $tabla(noHistoria,fechaIngresoPaciente,nombrePaciente,edadPaciente,genero,telefono,celular,familiarPaciente,parentezcoPaciente,telFamiliar,motivoCosulta,remite,enfermedadesDatos,obsEnfActual,alergiaPac,alergiaPacTipo,tipMedicamentoPact,otroMedicamento,obsMedPaciente,enferFamiliarPac,anteQuiPacient,patologiaPaciente,otraPatologia,ayudaTenicaPaciente,hiperqueratosis,hiperqueratosisMano,usoDeplantilla,detallePlantilla,separadorInt,detalleSeparador,taloneras,dentalleTaloneras,obsAyudTecniPacientePrenda,espolon,detalleEspolon,fancitis,detallefancitis,hiperqueratosisPie,detallehiperqueratosisPie,Metatarsalgia,detalleMetatarsalgia,piePlano,detallepiePlano,verrugaPlantar,detalleverrugaPlantar,obsZonaPlantar,Adactalina,Anoniquia,Coiloniquia,Exostosis,Onicogrifosis,Onicorrexis,obsGeneralPatologia,llenadoCapilar,llenadoCapilarDetalle,pulsopedio,pulsopedioDetalle,Temperatura,TemperaturaDet,Edemas,EdemasDet,Eritema,EritemaDet,Varices,VaricesDet,amputacion,amputaciondet,dedosDeformados,dedosDeformadosDet,Helomasblandos,HelomasblandosDet,Helomasduros,HelomasdurosDet,Piedeformado,PiedeformadoDet,Ulcera,UlceraDet,
+			vacunaTetanos,vacunaTetanosDet,calzadoApropiado,calzadoApropiadoDet,medidasApropiadas,medidasApropiadasDet,corteUnasAdecuado,corteUnasAdecuadoDet,higinePie,higinePieDet,caminaDescalzo,caminaDescalzoDet) 
 				VALUES 
-			(:noHistoria,:fechaIngresoPaciente,:nombrePaciente,:edadPaciente,:genero,:telefono,:celular,:familiarPaciente,:parentezcoPaciente,:telFamiliar,:motivoCosulta,:remite,:enfermedadesDatos,:obsEnfActual,:alergiaPac,:alergiaPacTipo,:tipMedicamentoPact,:otroMedicamento,:obsMedPaciente,:enferFamiliarPac,:anteQuiPacient,:patologiaPaciente,:otraPatologia,:ayudaTenicaPaciente,:hiperqueratosis,:hiperqueratosisMano,:usoDeplantilla,:detallePlantilla,:separadorInt,:detalleSeparador,:taloneras,:dentalleTaloneras,:obsAyudTecniPacientePrenda,:espolon,:detalleEspolon,:fancitis,:detallefancitis,:hiperqueratosisPie,:detallehiperqueratosisPie,:Metatarsalgia,:detalleMetatarsalgia,:piePlano,:detallepiePlano,:verrugaPlantar,:detalleverrugaPlantar,:obsZonaPlantar,:Adactalina,:Anoniquia,:Coiloniquia,:Exostosis,:Onicogrifosis,:Onicorrexis,:obsGeneralPatologia,:llenadoCapilar,:llenadoCapilarDetalle,:pulsopedio,:pulsopedioDetalle,:Temperatura,:TemperaturaDet,:Edemas,:EdemasDet,:Eritema,:EritemaDet,:Varices,:VaricesDet)");
+			(:noHistoria,:fechaIngresoPaciente,:nombrePaciente,:edadPaciente,:genero,:telefono,:celular,:familiarPaciente,:parentezcoPaciente,:telFamiliar,:motivoCosulta,:remite,:enfermedadesDatos,:obsEnfActual,:alergiaPac,:alergiaPacTipo,:tipMedicamentoPact,:otroMedicamento,:obsMedPaciente,:enferFamiliarPac,:anteQuiPacient,:patologiaPaciente,:otraPatologia,:ayudaTenicaPaciente,:hiperqueratosis,:hiperqueratosisMano,:usoDeplantilla,:detallePlantilla,:separadorInt,:detalleSeparador,:taloneras,:dentalleTaloneras,:obsAyudTecniPacientePrenda,:espolon,:detalleEspolon,:fancitis,:detallefancitis,:hiperqueratosisPie,:detallehiperqueratosisPie,:Metatarsalgia,:detalleMetatarsalgia,:piePlano,:detallepiePlano,:verrugaPlantar,:detalleverrugaPlantar,:obsZonaPlantar,:Adactalina,:Anoniquia,:Coiloniquia,:Exostosis,:Onicogrifosis,:Onicorrexis,:obsGeneralPatologia,:llenadoCapilar,:llenadoCapilarDetalle,:pulsopedio,:pulsopedioDetalle,:Temperatura,:TemperaturaDet,:Edemas,:EdemasDet,:Eritema,:EritemaDet,:Varices,:VaricesDet,:amputacion,:amputaciondet,:dedosDeformados,:dedosDeformadosDet,:Helomasblandos,:HelomasblandosDet,:Helomasduros,:HelomasdurosDet,:Piedeformado,:PiedeformadoDet,:Ulcera,:UlceraDet,:vacunaTetanos,:vacunaTetanosDet,:calzadoApropiado,:calzadoApropiadoDet,:medidasApropiadas,:medidasApropiadasDet,:corteUnasAdecuado,:corteUnasAdecuadoDet,:higinePie,:higinePieDet,:caminaDescalzo,:caminaDescalzoDet)");
 			$stmt -> bindParam(":noHistoria",$variables["noHistoria"]);
 			$stmt -> bindParam(":fechaIngresoPaciente",$variables["fechaIngresoPaciente"]);
 			$stmt -> bindParam(":nombrePaciente",$variables["nombrePaciente"]);
@@ -70,6 +71,31 @@ class HistorialModel extends ConexionBD{
 			$stmt -> bindParam(":EritemaDet", $variables["EritemaDet"]);
 			$stmt -> bindParam(":Varices", $variables["Varices"]);
 			$stmt -> bindParam(":VaricesDet", $variables["VaricesDet"]);
+			$stmt -> bindParam(":amputacion", $variables["amputacion"]);
+			$stmt -> bindParam(":amputaciondet" , $variables["amputaciondet"]);
+			$stmt -> bindParam(":dedosDeformados" , $variables["dedosDeformados"]);
+			$stmt -> bindParam(":dedosDeformadosDet" , $variables["dedosDeformadosDet"]);
+			$stmt -> bindParam(":Helomasblandos" , $variables["Helomasblandos"]);
+			$stmt -> bindParam(":HelomasblandosDet" , $variables["HelomasblandosDet"]);
+			$stmt -> bindParam(":Helomasduros" , $variables["Helomasduros"]);
+			$stmt -> bindParam(":HelomasdurosDet" , $variables["HelomasdurosDet"]);
+			$stmt -> bindParam(":Piedeformado" , $variables["Piedeformado"]);
+			$stmt -> bindParam(":PiedeformadoDet" , $variables["PiedeformadoDet"]);
+			$stmt -> bindParam(":Ulcera" , $variables["Ulcera"]);
+			$stmt -> bindParam(":UlceraDet" , $variables["UlceraDet"]);
+			$stmt -> bindParam(":vacunaTetanos", $variables["vacunaTetanos"]);
+			$stmt -> bindParam(":vacunaTetanosDet", $variables["vacunaTetanosDet"]);
+			$stmt -> bindParam(":calzadoApropiado", $variables["calzadoApropiado"]);
+			$stmt -> bindParam(":calzadoApropiadoDet", $variables["calzadoApropiadoDet"]);
+			$stmt -> bindParam(":medidasApropiadas", $variables["medidasApropiadas"]);
+			$stmt -> bindParam(":medidasApropiadasDet", $variables["medidasApropiadasDet"]);
+			$stmt -> bindParam(":corteUnasAdecuado", $variables["corteUnasAdecuado"]);
+			$stmt -> bindParam(":corteUnasAdecuadoDet", $variables["corteUnasAdecuadoDet"]);
+			$stmt -> bindParam(":higinePie", $variables["higinePie"]);
+			$stmt -> bindParam(":higinePieDet", $variables["higinePieDet"]);
+			$stmt -> bindParam(":caminaDescalzo", $variables["caminaDescalzo"]);
+			$stmt -> bindParam(":caminaDescalzoDet", $variables["caminaDescalzoDet"]);
+	
 			return $stmt -> execute();
 			$stmt -> close();
 		}

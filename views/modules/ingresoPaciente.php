@@ -722,6 +722,7 @@ include "navegacionPodo.php";
 							<select name="amputaciondet" id="amputaciondet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
+								<option value="Ambas">Ambas</option>
 							</select>
 					</div>
 				</div>
@@ -741,10 +742,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="HIPERQUERATOSIS">
+							<input type="checkbox" class="form-check-input" value="Helomas blandos" name="Helomasblandos" id="Helomasblandos">
 							Helomas blandos
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="HelomasblandosDet" id="HelomasblandosDet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 								<option value="Ambas">Ambas</option>
@@ -754,10 +755,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 				     <div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="HIPERQUERATOSIS">
+							<input type="checkbox" class="form-check-input" value="Helomas duros" name="Helomasduros" id="Helomasduros">
 							Helomas duros
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="HelomasdurosDet" id="HelomasdurosDet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 								<option value="Ambas">Ambas</option>
@@ -767,10 +768,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 						<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="HIPERQUERATOSIS">
+							<input type="checkbox" class="form-check-input" value="Pie deformado" name="Piedeformado" id="Piedeformado">
 							Pie deformado
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="PiedeformadoDet" id="PiedeformadoDet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 								<option value="Ambas">Ambas</option>
@@ -780,10 +781,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 						<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="HIPERQUERATOSIS">
+							<input type="checkbox" class="form-check-input" value="Ulcera" name="Ulcera" id="Ulcera">
 							ULCERA
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="UlceraDet" id="UlceraDet" class="form-control" style="width: 120px;">
 								<option value="Izquierda">Izquierda</option>
 								<option value="Derecha">Derecha</option>
 								<option value="Ambas">Ambas</option>
@@ -798,10 +799,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Vacuna del tetanos">
+							<input type="checkbox" class="form-check-input" value="Vacuna del tetanos" name="vacunaTetanos" id="vacunaTetanos">
 							Vacuna del tetanos
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="vacunaTetanosDet" id="vacunaTetanosDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -810,10 +811,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Calzado apropiado">
+							<input type="checkbox" name="calzadoApropiado" id="calzadoApropiado" class="form-check-input" value="Calzado apropiado">
 							Calzado apropiado
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="calzadoApropiadoDet" id="calzadoApropiadoDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -822,10 +823,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Medidas apropiadas">
+							<input type="checkbox" name="medidasApropiadas" id="medidasApropiadas" class="form-check-input" value="Medidas apropiadas">
 							Medidas apropiadas
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="medidasApropiadasDet" id="medidasApropiadasDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -834,10 +835,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Corte adecuado de uñas">
+							<input type="checkbox" name="corteUnasAdecuado" id="corteUnasAdecuado" class="form-check-input" value="Corte adecuado de uñas">
 							Corte adecuado de uñas
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="corteUnasAdecuadoDet" id="corteUnasAdecuadoDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -846,10 +847,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Higiene del pie">
+							<input type="checkbox" name="higinePie" id="higinePie" class="form-check-input" value="Higiene del pie">
 							Higiene del pie
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="higinePieDet" id="higinePieDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -858,10 +859,10 @@ include "navegacionPodo.php";
 				<div class="col-md-4">
 					<div class="form-check">
 							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" value="Camina descalzo">
+							<input type="checkbox" name="caminaDescalzo" id="caminaDescalzo" class="form-check-input" value="Camina descalzo">
 							Camina descalzo
 							</label>
-							<select name="" id="" class="form-control" style="width: 120px;">
+							<select name="caminaDescalzoDet" id="caminaDescalzoDet" class="form-control" style="width: 120px;">
 								<option value="Si">Si</option>
 								<option value="No">No</option>
 							</select>
@@ -873,7 +874,6 @@ include "navegacionPodo.php";
 			$Paciente -> ingresoHistorialController();
 			?>
 			<div class="col-md-12"><hr class="alert-info"></div>
-			<!-- <div class="col-md-12"><input type="submit" class="btn btn-success btn-lg"></div> -->
 			<div class="col-md-12">
 				<button type="button" class="btn btn-toolbar" id="btnGuardar">Guardar</button>
 			</div>
