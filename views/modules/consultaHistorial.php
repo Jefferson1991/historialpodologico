@@ -331,6 +331,14 @@ include "navegacionPodo.php";
 												<input type="text"class="form-control" name="caminaDescalzoDet" id="caminaDescalzoDet" disabled>
 												</div>
 										</div>
+										<div class="row">
+											<div class="col-md-12"><hr>TRATAMIENTO DIABETICO:<hr></div>
+												<div class="col-sm-12">
+												<p id="tratamientoDiabetico" name="tratamientoDiabetico"></p>
+												
+												</div>
+										</div>
+
 								</div>
 							<!--<div class="card-footer ard bg-dark text-white">Campos ingresados por:</div>-->
 						</div>

@@ -165,6 +165,7 @@ $("#btnGuardar").click(function(){
 	var higinePieDet = $("#higinePieDet").val();
 	var caminaDescalzo = $("#caminaDescalzo").val();
 	var caminaDescalzoDet = $("#caminaDescalzoDet").val();
+	var tratamientoDiabetico = $("#tratamientoDiabetico").val();
 	var parametros = {noHistoria:noHistoria,
 					  fechaIngresoPaciente:fechaIngresoPaciente,
 					  nombrePaciente:nombrePaciente,
@@ -253,21 +254,20 @@ $("#btnGuardar").click(function(){
 					  higinePie:higinePie,
 					  higinePieDet:higinePieDet,
 					  caminaDescalzo:caminaDescalzo,
-					  caminaDescalzoDet:caminaDescalzoDet};
-					  
-					 
-	$.ajax({
-		url:"./views/ajax/PacienteAjax.php",
-		method: "POST",
-		data: parametros,
-		success:function(datos) {
-			if(datos > 0){
-				swal("El paciente ya existe");
-			}else{
-				swal("Paciente registrado correctamente");
-			}
-		}
-	});
+					  caminaDescalzoDet:caminaDescalzoDet,
+					  tratamientoDiabetico:tratamientoDiabetico};
+						$.ajax({
+							url:"./views/ajax/PacienteAjax.php",
+							method: "POST",
+							data: parametros,
+							success:function(datos) {
+								if(datos > 0){
+									swal("El paciente ya existe");
+								}else{
+									swal("Paciente registrado correctamente");
+								}
+							}
+						});
 });
 $("#btnConsultar").click(function(){
 	var parametroBus = $("#parametroBus").val();
@@ -389,6 +389,7 @@ $("#btnConsultar").click(function(){
 					$("#higinePieDet").val(datos["higinePieDet"]);
 					$("#caminaDescalzo").html(datos["caminaDescalzo"]);
 					$("#caminaDescalzoDet").val(datos["caminaDescalzoDet"]);
+					$("#tratamientoDiabetico").html(datos["tratamientoDiabetico"]);
 			}else if(datos === false){
 				alert("Es posible que el campo de busqueda se encuentre vacio");
 				window.location = "consultaHistorial";

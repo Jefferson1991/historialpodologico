@@ -868,6 +868,15 @@ include "navegacionPodo.php";
 							</select>
 					</div>
 				</div>
+				<div class="col-md-12">
+						<hr>
+						<select name="tratamientoDiabetico" id="tratamientoDiabetico" class="form-control">
+							<option value="Insulina">Insulina</option>
+							<option value="Dieta">Dieta</option>
+							<option value="Medicación">Medicación oral</option>
+							<option value="Medicación">Ninguna</option>
+						</select>
+				</div>
 			</div>
 			<?php
 			$Paciente = new HistorialController();

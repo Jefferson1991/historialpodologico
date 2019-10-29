@@ -90,7 +90,8 @@ class HistorialController{
 								  "higinePie" => $_POST["higinePie"],
 								  "higinePieDet" => $_POST["higinePieDet"],
 								  "caminaDescalzo" => $_POST["caminaDescalzo"],
-								  "caminaDescalzoDet" => $_POST["caminaDescalzoDet"]);
+								  "caminaDescalzoDet" => $_POST["caminaDescalzoDet"],
+								  "tratamientoDiabetico" => $_POST["tratamientoDiabetico"]);
 				$datoExistente = array("noHistoria"=>$_POST["noHistoria"]);
 				$existenciaPaciente = HistorialModel::consultaExistenciaPacienteModel($datoExistente,"historialpaciente");
 				if($existenciaPaciente > 0){
