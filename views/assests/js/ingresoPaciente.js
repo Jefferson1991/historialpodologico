@@ -377,15 +377,19 @@ $("#btnConsultar").click(function(){
 					$("#PiedeformadoDet").val(datos["PiedeformadoDet"]);
 					$("#Ulcera").html(datos["Ulcera"]);
 					$("#UlceraDet").val(datos["UlceraDet"]);
-
-
-
-
-
-
-
-
-			}else if(datos == false){
+					$("#vacunaTetanos").html(datos["vacunaTetanos"]);
+					$("#vacunaTetanosDet").val(datos["vacunaTetanosDet"]);
+					$("#calzadoApropiado").html(datos["calzadoApropiado"]);
+					$("#calzadoApropiadoDet").val(datos["calzadoApropiadoDet"]);
+					$("#medidasApropiadas").html(datos["medidasApropiadas"]);
+					$("#medidasApropiadasDet").val(datos["medidasApropiadasDet"]);
+					$("#corteUnasAdecuado").html(datos["corteUnasAdecuado"]);
+					$("#corteUnasAdecuadoDet").val(datos["corteUnasAdecuadoDet"]);
+					$("#higinePie").html(datos["higinePie"]);
+					$("#higinePieDet").val(datos["higinePieDet"]);
+					$("#caminaDescalzo").html(datos["caminaDescalzo"]);
+					$("#caminaDescalzoDet").val(datos["caminaDescalzoDet"]);
+			}else if(datos === false){
 				alert("Es posible que el campo de busqueda se encuentre vacio");
 				window.location = "consultaHistorial";
 			}

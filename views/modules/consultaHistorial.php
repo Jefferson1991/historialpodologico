@@ -282,7 +282,7 @@ include "navegacionPodo.php";
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-md-12">PIE:<hr></div>											
+											<div class="col-md-12"><hr>PIE:<hr></div>											
 											<div class="col-sm-2">
 											<p id="amputacion" name="amputacion"></p>
 											<input type="text"class="form-control" name="amputaciondet" id="amputaciondet" disabled>
@@ -304,7 +304,33 @@ include "navegacionPodo.php";
 											<input type="text"class="form-control" name="UlceraDet" id="UlceraDet" disabled>
 											</div>
 										</div>
-	
+										<div class="row">
+											<div class="col-md-12"><hr>CUIDADO DEL PIE:<hr></div>
+												<div class="col-sm-2">
+												<p id="vacunaTetanos" name="vacunaTetanos"></p>
+												<input type="text"class="form-control" name="vacunaTetanosDet" id="vacunaTetanosDet" disabled>
+												</div>
+												<div class="col-sm-2">
+												<p id="calzadoApropiado" name="calzadoApropiado"></p>
+												<input type="text"class="form-control" name="calzadoApropiadoDet" id="calzadoApropiadoDet" disabled>
+												</div>
+												<div class="col-sm-2">
+												<p id="medidasApropiadas" name="medidasApropiadas"></p>
+												<input type="text"class="form-control" name="medidasApropiadasDet" id="medidasApropiadasDet" disabled>
+												</div>
+												<div class="col-sm-2">
+												<p id="corteUnasAdecuado" name="corteUnasAdecuado"></p>
+												<input type="text"class="form-control" name="corteUnasAdecuadoDet" id="corteUnasAdecuadoDet" disabled>
+												</div>
+												<div class="col-sm-2">
+												<p id="higinePie" name="higinePie"></p>
+												<input type="text"class="form-control" name="higinePieDet" id="higinePieDet" disabled>
+												</div>
+												<div class="col-sm-2">
+												<p id="caminaDescalzo" name="caminaDescalzo"></p>
+												<input type="text"class="form-control" name="caminaDescalzoDet" id="caminaDescalzoDet" disabled>
+												</div>
+										</div>
 								</div>
 							<!--<div class="card-footer ard bg-dark text-white">Campos ingresados por:</div>-->
 						</div>
