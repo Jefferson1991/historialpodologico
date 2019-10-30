@@ -15,6 +15,12 @@ include "navegacionPodo.php";
 						</span>
 					</div>	
 			</div>
+			<div class="mx-auto" style="width: 200px;">
+			<button type="button" class="btn btn-warning btn-block" onclick="print();"><i class="fa fa-print"></i></button>
+		    </div>
+			<div class="mx-auto" style="width: 200px;">
+			<button type="button" class="btn bg-dark text-white btn-block btnAgregarCita" data-toggle="modal" data-target=".bsIngresoCitas"><i class="fa fa-pencil"></i></button>
+		    </div>
 	</div>
 	<hr>	
 				<?php
@@ -29,7 +35,7 @@ include "navegacionPodo.php";
 										<div class="row">											
 											<div class="col-sm-2">
 											Fecha registro:
-											<input type="text"class="form-control" name="fechaIngresoPacienteC" id="fechaIngresoPacienteC"> disabled
+											<input type="text"class="form-control" name="fechaIngresoPacienteC" id="fechaIngresoPacienteC" disabled >
 											</div>
 											<div class="col-sm-2">
 											No. Historia:
@@ -338,6 +344,11 @@ include "navegacionPodo.php";
 												
 												</div>
 										</div>
+										<div class="row">
+											<div class="col-md-12">
+											<hr>
+											</div>
+										</div>
 
 								</div>
 							<!--<div class="card-footer ard bg-dark text-white">Campos ingresados por:</div>-->
@@ -346,3 +357,69 @@ include "navegacionPodo.php";
 				</div>
 				<br><br><br><br>
 </div>
+	<!---Modal ingreso de siguiente cita --->
+	<div class="modal fade bsIngresoCitas" id="modal-id">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						</div>
+						<div class="modal-body">
+						<form method="post">
+						<input type="text" class="form-control" id="noHistoriaNueva" name="noHistoriaNueva">
+						<div class="row">
+								<div class="alert alert-info">
+									<strong>Ingreso de siguiente consulta!</strong> Información importante
+								</div>
+							<div class="col-md-12">
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fa fa-calendar"></i></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Ingrese la fecha de consulta" id="fechaConsulta" name="fechaConsulta">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fa fa-book"></i></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Ingrese el diagnostico actual" id="diagnostico" name="diagnostico">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fa fa-bookmark"></i></span>
+									</div>
+									<select name="procedimiento" id="procedimiento" class="form-control">
+										<option value="">Seleccione el procedimiento</option>
+										<option value="">Onicotomía</option>
+										<option value="">Profilaxis podal</option>
+										<option value="">Helotomia</option>
+										<option value="">Pulida plantar</option>
+										<option value="">Pedigrafia</option>
+										<option value="">Extrac. Espicula</option>
+										<option value="">Matriceptomia</option>
+										<option value="">Curación</option>
+									</select>
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fa fa-clone"></i></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Ingrese la prescripción" id="prescripcion" name="prescripcion">
+								</div>
+								<div class="input-group mb-3">
+									<div class="input-group-append">
+										<span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Ingrese la fecha del proximo control" id="fechaControlProximo" name="fechaControlProximo">
+								</div>
+							</div>
+						</div>
+						</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default " data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary btnGuadarCita">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</div>	

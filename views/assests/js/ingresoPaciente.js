@@ -1,4 +1,15 @@
 $(document).ready(function(){
+/* -------------------------------------------------------------------------- */
+/*                               Fecha de inputs                              */
+/* -------------------------------------------------------------------------- */
+	$.datetimepicker.setLocale('es');
+	$('#fechaConsulta').datetimepicker({value: '2017/04/20 11:22', step: 10});
+	$('#fechaIngresoPaciente').datetimepicker({value: '2017/04/20 11:22', step: 10});
+	$('#fechaControlProximo').datetimepicker({value: '2017/04/20 11:22', step: 10});
+/* -------------------------------------------------------------------------- */
+/*                                 FIN FECHAS                                 */
+/* -------------------------------------------------------------------------- */
+
 	var enfermedadesDatos=[];
 	$(".enfermedadescheck").click(function() {
   	enfermedadesDatos.length=0;
@@ -428,3 +439,38 @@ $('#tableData').DataTable({
 			}
         }
 });
+
+$(document).on("click",".btnAgregarCita",function(){
+	
+	var noHistoria = $("#parametroBus").val();
+	$("#noHistoriaNueva").val(noHistoria);
+	
+	 
+})
+$(document).on("click",".btnGuadarCita",function(){
+	var noHistoriaNueva = $("#noHistoriaNueva").val(noHistoria);
+	var fechaConsulta = $("#fechaConsulta").val();
+	var diagnostico = $("#diagnostico").val();
+	var procedimiento = $("#procedimiento").val();
+	var prescripcion = $("#prescripcion").val();
+	var fechaControlProximo = $("#fechaControlProximo").val();
+	var parametros = {
+		noHistoriaNueva:noHistoriaNueva,
+		fechaConsulta:fechaConsulta,
+		diagnostico:diagnostico,
+		procedimiento:procedimiento,
+		prescripcion:prescripcion,
+		fechaControlProximo:fechaControlProximo
+	}
+	$.ajax({
+		url:"views/ajax/PacienteAjax.php",
+		method: "POST",
+		data: parametros,
+		dataType: "json",
+		success:function(datos) {
+			console.log(datos);
+		}
+
+	})
+	
+})

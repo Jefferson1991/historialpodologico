@@ -9,14 +9,9 @@
     <link rel="stylesheet" href="views/assests/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="views/assests/css/sweetalert.css">
     <link rel="stylesheet" href="views/assests/vendor/font-awesome-4.6.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="views/assests/vendor/jquery-ui-1.12.1.custom/jquery-ui.css">
     <script src="views/assests/js/jquery-3.3.1.js"></script>
-    <script src="views/assests/vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-          <script>
-          $(function() {
-            $( "#fechaIngresoPaciente" ).datepicker();
-          } );
-          </script>
+    <link rel="stylesheet" href="views/assests/vendor/datetimepicker-master/build/jquery.datetimepicker.min.css">
+    <script src="views/assests/vendor/datetimepicker-master/build/jquery.datetimepicker.full.js"></script>
 </head>
 <body class="container" style="background-color: gray;">
     <div>

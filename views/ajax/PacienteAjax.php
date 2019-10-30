@@ -3,16 +3,21 @@ require_once "../../controllers/PacientesController.php";
 require_once "../../models/PacientesModel.php";
 class AjaxPaciente{
 		 public function ingresoPacientesAjax (){		 
-	       $namePost = array("noHistoria" => $_POST);
+	         $namePost = array("noHistoria" => $_POST);
 		 	   $guardarHistoria = HistorialController::ingresoHistorialController($namePost);
          }
       public $parametroBus;
 		  public function consultaAjaxPaciente(){
              $aux = $this->parametroBus;
-				 	   $parametroBus = array("parametroBus" => $_POST["parametroBus"]);
+				 $parametroBus = array("parametroBus" => $_POST["parametroBus"]);
              $guardarHistoria = HistorialController::consultaHistoriaController($aux,"historialpaciente");
              
-		 }
+       }
+       public function IngresoCita(){
+             if(isset($_POST["noHistoriaNueva"])){
+                var_dump($_POST["noHistoriaNueva"]);
+             }
+       }
 }
    if(isset($_POST["noHistoria"])){
       $guardarHistoriaPrincipal = new AjaxPaciente();
@@ -25,4 +30,8 @@ class AjaxPaciente{
       $guardarHistoriaPrincipal -> parametroBus = $_POST['parametroBus'];
       $guardarHistoriaPrincipal -> consultaAjaxPaciente();
     }
-?>
+    if(isset($_POST["noHistoriaNueva"])){
+      $guardarCita = new AjaxPaciente();
+      $guardarCita -> IngresoCita();
+
+   }

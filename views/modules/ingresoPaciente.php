@@ -1,7 +1,7 @@
 <?php
 include "navegacionPodo.php";
 ?>
-<form action="">
+<form method="post">
 	 <div class="card container-fluid" style=" background-color: white;
         		-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 				-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -11,7 +11,7 @@ include "navegacionPodo.php";
           		</div>
 				<div class="row">
 					<div class="col-md-12"><pre>DATOS GENERALES DEL PACIENTE:</pre></div>
-					<div class="col-md-2">
+					<div class="col-md-3">
 						<pre class="blockquote-footer">Fecha de ingreso</pre>
 						<input class="form-control" type="text" name="fechaIngresoPaciente" id="fechaIngresoPaciente">
 				    </div>
@@ -19,7 +19,7 @@ include "navegacionPodo.php";
 						<pre class="blockquote-footer">Numero de historia</pre>
 						    <input class="form-control" type="text" name="noHistoria" id="noHistoria">
 				    </div>
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<pre class="blockquote-footer">Nombres del paciente</pre>
 				            <input class="form-control" type="text" name="nombrePaciente" id="nombrePaciente">
 					</div>
