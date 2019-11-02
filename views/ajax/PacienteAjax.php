@@ -17,9 +17,7 @@ class AjaxPaciente{
        public function consultaCita(){
          $parametroNuevo = array("parametroNuevo" => $_POST["parametroNuevo"]);
          $consultaCitas = HistorialController::ctrHistoriaController($parametroNuevo);
-         
          echo json_encode($consultaCitas);
-
        }
        public function IngresoCita(){
              if(isset($_POST["noHistoriaNueva"])){

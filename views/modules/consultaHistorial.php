@@ -9,8 +9,7 @@ include "navegacionPodo.php";
 		<div class="col-md-12"><hr></div>
 			<div class="col-md-6">
 				<div class="input-group">
-				<input  class="form-control" type="text" name="parametroBus" id="parametroBus" placeholder="Ingrese el parametro de busqueda" value="1722576202">
-				<input type="hidden" name="parametroNuevo" id="parametroNuevo" value="1722576202">
+				<input  class="form-control " type="text" name="parametroBus"  id="parametroBus" placeholder="Ingrese el parametro de busqueda" value="1722576202">
 					<div class="input-group-append">
 					<button class="btn btn-info btnSegundaConsulta" type="button" id="btnConsultar">Buscar paciente</button>
 					</div>
@@ -358,6 +357,7 @@ include "navegacionPodo.php";
 				<table class="table table-striped table-hover table-responsive" id="TblCita">
 				<thead class="thead-dark">
 				<tr>
+					<th>Id</th>
 					<th>No. historia</th>
 					<th>fechaConsulta</th>
 					<th>diagnostico</th>
@@ -378,7 +378,7 @@ include "navegacionPodo.php";
 </div>
 
 	<!---Modal ingreso de siguiente cita --->
-	<div class="modal fade bsIngresoCitas" id="modal-id">
+	<div class="modal fade bsIngresoCitas">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -443,3 +443,51 @@ include "navegacionPodo.php";
 					</div>
 				</div>
 			</div>	
+			<div class="modal fade EditarCitaModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<h4 class="modal-title">Modificación de cita agendada</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							
+						</div>
+						<form method="post">
+						<div class="modal-body">
+							<input type="hidden" id="idCitasEdit" name="idCitasEdit">
+							No. Historia:
+							<input type="text" id="noHistoriaEdit" name="noHistoriaEdit" class="form-control" disabled/>
+							Fecha de consulta:
+							<input type="text" id="fechaConsultaEdit" name="fechaConsultaEdit" class="form-control" disabled/>
+							Diagnostico realizado:
+							<input type="text" id="diagnosticoEdit" name="diagnosticoEdit" class="form-control"/>
+							Procedimiento Realizado
+							<select name="procedimientoEdit" id="procedimientoEdit" class="form-control">
+										<option value="">Seleccione el procedimiento--</option>
+										<option value="Onicotomía">Onicotomía</option>
+										<option value="Profilaxis podal">Profilaxis podal</option>
+										<option value="Helotomia">Helotomia</option>
+										<option value="Pulida plantar">Pulida plantar</option>
+										<option value="Pedigrafia">Pedigrafia</option>
+										<option value="Extrac. Espicula">Extrac. Espicula</option>
+										<option value="Matriceptomia">Matriceptomia</option>
+										<option value="Curación">Curación</option>
+							</select>
+							Prescripción realizada:
+							<input type="text" id="prescripcionEdit" name="prescripcionEdit" class="form-control"/>
+							Fecha de control proximo
+							<input type="text" id="fechaControlProximoEdit" name="fechaControlProximoEdit" class="form-control"/>
+						</div>
+						</form>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary">Guardar cambios</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			

@@ -19,7 +19,6 @@ $(document).ready(function(){
     });
     $("#enfermedadesDatos").val(enfermedadesDatos)
     });
-
     var Adactalina=[];
 	$(".Adactalinacheck").click(function() {
   	Adactalina.length=0;
@@ -30,7 +29,6 @@ $(document).ready(function(){
     });
     $("#Adactalina").val(Adactalina)
     });
-
     var Anoniquia=[];
 	$(".Anoniquiacheck").click(function() {
   	Anoniquia.length=0;
@@ -401,7 +399,6 @@ $("#btnConsultar").click(function(){
 		}
 	});
 });
-
 $('#tableData').DataTable({
 				  "responsive":true,
 					    "destroy":true,
@@ -432,13 +429,9 @@ $('#tableData').DataTable({
 			}
         }
 });
-
 $(document).on("click",".btnAgregarCita",function(){
-	
 	var noHistoria = $("#parametroBus").val();
 	$("#noHistoriaNueva").val(noHistoria);
-	
-	 
 })
 $(document).on("click",".btnGuadarCita",function(){
 	var noHistoriaNueva = $("#noHistoriaNueva").val();
@@ -466,12 +459,12 @@ $(document).on("click",".btnGuadarCita",function(){
 		}
 	})
 })
-$(document).on("keyup","#parametroBus",function(){
+/*$(document).on("keyup","#parametroBus",function(){
 	var value = $(this).val();
 	$("#parametroNuevo").val(value);
-})
-$(".btnSegundaConsulta").click(function(){
-	var parametroNuevo = $("#parametroNuevo").val();
+})*/
+$(document).on("click",".btnSegundaConsulta",function(){
+	var parametroNuevo = $("#parametroBus").val();
 	var parametros = {parametroNuevo:parametroNuevo};
 	$.ajax({
 		url:"views/ajax/PacienteAjax.php",
@@ -479,21 +472,21 @@ $(".btnSegundaConsulta").click(function(){
 		data: parametros,
 		dataType: "json",
 		success:function(datos) {
-
-			$('#TblCita').DataTable({
+			var table = $("#TblCita").DataTable({
 				responsive: true,
 				destroy:true,
 				lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
 				data : datos,
-				columns: [
-					{data : datos["noHistoria"]},
-					{data : datos["fechaConsulta"]},
-					{data : datos["diagnostico"]},
-					{data : datos["procedimiento"]},	
-					{data : datos["prescripcion"]},
-					{data : datos["fechaControlProximo"]},
-					{defaultContent:"<button type='button' class='EditarPaciente btn btn-warning' data-toggle='modal' data-target='#modalModificaPaciente'><i class='fa fa-pencil'></i></button>"},
-      				{defaultContent:"<button type='button' class='eliminarPaciente btn btn-danger' data-toggle='modal' data-target='#eliminaPaciente' id='eliminarPaciente'><i class='fa fa-close'></i></button>"}
+				columns: [ 
+					{data : "idCitas"},
+					{data : "noHistoria"},
+					{data : "fechaConsulta"},
+					{data : "diagnostico"},
+					{data : "procedimiento"},	
+					{data : "prescripcion"},
+					{data : "fechaControlProximo"},
+					{"defaultContent":"<button type='button' class='EditarCita btn btn-warning' data-toggle='modal' data-target='.EditarCitaModal'><i class='fa fa-pencil'></i></button>"},
+      				{"defaultContent":"<button type='button' class='EliminarCita btn btn-danger' data-toggle='modal' data-target='#eliminaPaciente' id='eliminarPaciente'><i class='fa fa-close'></i></button>"}
 				],
 				"language": {
 				"sProcessing":     "Procesando...",
@@ -519,6 +512,17 @@ $(".btnSegundaConsulta").click(function(){
 				  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
 				}
 				}
+				
+				});
+				$('#TblCita tbody').on('click','.EditarCita', function () {
+					var data = table.row(this).data();
+					$("#idCitasEdit").val(data.idCitas)
+					$("#noHistoriaEdit").val(data.noHistoria)
+					$("#fechaConsultaEdit").val(data.fechaConsulta)
+					$("#diagnosticoEdit").val(data.diagnostico)
+					$("#procedimientoEdit").val(data.procedimiento)
+					$("#prescripcionEdit").val(data.prescripcion)
+					$("#fechaControlProximoEdit").val(data.fechaControlProximo)
 				});
 		}
 	});

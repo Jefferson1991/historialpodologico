@@ -110,7 +110,7 @@ class HistorialModel extends ConexionBD{
 			$stmt -> close();
 		}
 		static public function mdlHistoriaModel($parametroNuevo, $tbl){
-			$stmt = ConexionBD::conectar()->prepare("SELECT noHistoria,fechaConsulta,diagnostico,
+			$stmt = ConexionBD::conectar()->prepare("SELECT idCitas,noHistoria,fechaConsulta,diagnostico,
 			procedimiento,prescripcion,fechaControlProximo FROM $tbl WHERE noHistoria = :noHistoria");
 			$stmt -> bindParam(":noHistoria",$parametroNuevo["parametroNuevo"]);
 			$stmt -> execute();
