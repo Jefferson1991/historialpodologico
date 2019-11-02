@@ -393,8 +393,17 @@ $("#btnConsultar").click(function(){
 				$("#caminaDescalzoDet").val(datos["caminaDescalzoDet"]);
 				$("#tratamientoDiabetico").html(datos["tratamientoDiabetico"]);
 			}else if(datos === false){
-				alert("Es posible que el campo de busqueda se encuentre vacio");
-				window.location = "consultaHistorial";
+				swal({
+                    title: '¡Notificacón!',
+                    text: '¡Es posible que el campo de busqueda se encuentre vacio!',
+                    type: 'warning',
+                    confirmButtonColor: 'rgb(11, 138, 82)',
+                    confirmButtonText: 'Ok',
+                    closeOnConfirm: false
+                  },
+                  function() {
+					window.location = "consultaHistorial";
+                  });
 			}
 		}
 	});
@@ -454,7 +463,18 @@ $(document).on("click",".btnGuadarCita",function(){
 		dataType: "json",
 		success:function(datos) {
 			if(datos){
-				swal("Ingreso de siguiente cita exitoso");
+				swal({
+                    title: '¡Notificacón!',
+                    text: '¡Ingreso de siguiente cita exitoso!',
+                    type: 'success',
+                    confirmButtonColor: 'rgb(18, 138, 82)',
+                    confirmButtonText: 'Ok',
+                    closeOnConfirm: false
+                  },
+                  function() {
+					window.location = "consultaHistorial";
+                  });
+				
 			}
 		}
 	})
@@ -472,58 +492,73 @@ $(document).on("click",".btnSegundaConsulta",function(){
 		data: parametros,
 		dataType: "json",
 		success:function(datos) {
-			var table = $("#TblCita").DataTable({
-				responsive: true,
-				destroy:true,
-				lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
-				data : datos,
-				columns: [ 
-					{data : "idCitas"},
-					{data : "noHistoria"},
-					{data : "fechaConsulta"},
-					{data : "diagnostico"},
-					{data : "procedimiento"},	
-					{data : "prescripcion"},
-					{data : "fechaControlProximo"},
-					{"defaultContent":"<button type='button' class='EditarCita btn btn-warning' data-toggle='modal' data-target='.EditarCitaModal'><i class='fa fa-pencil'></i></button>"},
-      				{"defaultContent":"<button type='button' class='EliminarCita btn btn-danger' data-toggle='modal' data-target='#eliminaPaciente' id='eliminarPaciente'><i class='fa fa-close'></i></button>"}
-				],
-				"language": {
-				"sProcessing":     "Procesando...",
-				"sLengthMenu":     "Mostrar _MENU_ registros",
-				"sZeroRecords":    "No se encontraron resultados",
-				"sEmptyTable":     "Ningún dato disponible en esta tabla",
-				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-				"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-				"sInfoPostFix":    "",
-				"sSearch":         "Buscar:",
-				"sUrl":            "",
-				"sInfoThousands":  ",",
-				"sLoadingRecords": "Cargando...",
-				"oPaginate": {
-				  "sFirst":    "Primero",
-				  "sLast":     "Último",
-				  "sNext":     "Siguiente",
-				  "sPrevious": "Anterior"
-				},
-				"oAria": {
-				  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-				  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-				}
-				}
-				
-				});
-				$('#TblCita tbody').on('click','.EditarCita', function () {
-					var data = table.row(this).data();
-					$("#idCitasEdit").val(data.idCitas)
-					$("#noHistoriaEdit").val(data.noHistoria)
-					$("#fechaConsultaEdit").val(data.fechaConsulta)
-					$("#diagnosticoEdit").val(data.diagnostico)
-					$("#procedimientoEdit").val(data.procedimiento)
-					$("#prescripcionEdit").val(data.prescripcion)
-					$("#fechaControlProximoEdit").val(data.fechaControlProximo)
-				});
+	
+				var table = $("#TblCita").DataTable({
+					responsive: true,
+					destroy:true,
+					lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+					data : datos,
+					columns: [ 
+						{data : "idCitas"},
+						{data : "noHistoria"},
+						{data : "fechaConsulta"},
+						{data : "diagnostico"},
+						{data : "procedimiento"},	
+						{data : "prescripcion"},
+						{data : "fechaControlProximo"},
+						{"defaultContent":"<button type='button' class='EditarCita btn btn-warning' data-toggle='modal' data-target='.EditarCitaModal'><i class='fa fa-pencil'></i></button><button type='button' class='EliminarCita btn btn-danger' data-toggle='modal' data-target='#eliminaPaciente' id='eliminarPaciente'><i class='fa fa-close'></i></button>"}
+					],
+					"language": {
+					"sProcessing":     "Procesando...",
+					"sLengthMenu":     "Mostrar _MENU_ registros",
+					"sZeroRecords":    "No se encontraron resultados",
+					"sEmptyTable":     "Ningún dato disponible en esta tabla",
+					"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+					"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+					"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+					"sInfoPostFix":    "",
+					"sSearch":         "Buscar:",
+					"sUrl":            "",
+					"sInfoThousands":  ",",
+					"sLoadingRecords": "Cargando...",
+					"oPaginate": {
+					  "sFirst":    "Primero",
+					  "sLast":     "Último",
+					  "sNext":     "Siguiente",
+					  "sPrevious": "Anterior"
+					},
+					"oAria": {
+					  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+					  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+					}
+					}
+					
+					});
+					$(document).on('click','#TblCita tbody .EditarCita', function (e) {
+						var dataUno = table.row(this).data();
+						var dataDos = table.row($(this).parents("tr")).data();
+						if(dataUno){
+							console.log("datosUnO",dataUno);
+							$("#idCitasEdit").val(dataUno.idCitas)
+							$("#noHistoriaEdit").val(dataUno.noHistoria)
+							$("#fechaConsultaEdit").val(dataUno.fechaConsulta)
+							$("#diagnosticoEdit").val(dataUno.diagnostico)
+							$("#procedimientoEdit").val(dataUno.procedimiento)
+							$("#prescripcionEdit").val(dataUno.prescripcion)
+							$("#fechaControlProximoEdit").val(dataUno.fechaControlProximo)
+						}else if(dataDos){
+							console.log("Dato dos", dataDos);
+							$("#idCitasEdit").val(dataDos.idCitas)
+							$("#noHistoriaEdit").val(dataDos.noHistoria)
+							$("#fechaConsultaEdit").val(dataDos.fechaConsulta)
+							$("#diagnosticoEdit").val(dataDos.diagnostico)
+							$("#procedimientoEdit").val(dataDos.procedimiento)
+							$("#prescripcionEdit").val(dataDos.prescripcion)
+							$("#fechaControlProximoEdit").val(dataDos.fechaControlProximo)
+						}else {
+							swal("La busqueda de este paciente no registras citas anteriores");
+						}
+					});
 		}
 	});
 })

@@ -353,8 +353,8 @@ include "navegacionPodo.php";
 				
 				</div>
 				<br>
-				<div class="col-md-12 table container-fluid">
-				<table class="table table-striped table-hover table-responsive" id="TblCita">
+				<div class="col-md-12 table container-fluid table-responsive">
+				<table class="table table-striped table-hover" id="TblCita">
 				<thead class="thead-dark">
 				<tr>
 					<th>Id</th>
@@ -364,8 +364,7 @@ include "navegacionPodo.php";
 					<th>procedimiento</th>
 					<th>prescripcion</th>
 					<th>fechaControlProximo</th>
-					<th>Editar</th>
-					<th>Eliminar</th>
+					<th width="70%">Acciones</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -392,6 +391,7 @@ include "navegacionPodo.php";
 									<strong>Ingreso de siguiente consulta!</strong> Información importante
 								</div>
 							<div class="col-md-12">
+							Fecha actual de la cita:
 								<div class="input-group mb-3">
 									<div class="input-group-append">
 										<span class="input-group-text"><i class="fa fa-calendar"></i></span>
@@ -426,6 +426,7 @@ include "navegacionPodo.php";
 									</div>
 									<input type="text" class="form-control" placeholder="Ingrese la prescripción" id="prescripcion" name="prescripcion">
 								</div>
+								Escoja la fecha de la siguiente cita:
 								<div class="input-group mb-3">
 									<div class="input-group-append">
 										<span class="input-group-text"><i class="fa fa-calendar-o"></i></span>
