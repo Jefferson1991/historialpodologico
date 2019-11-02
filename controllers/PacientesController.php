@@ -104,14 +104,18 @@ class HistorialController{
 		}
 		/*Busqueda en campo de texto devuelve ajax y despliega campo por campo */
 		public function consultaHistoriaController(){
-			
 			if (isset($_POST["parametroBus"])) {
 				$parametroBus = array("parametroBus" => $_POST["parametroBus"]);
 				$postName = HistorialModel::consultaHistoriaModel($parametroBus,"historialpaciente");
 				echo json_encode($postName);
 				}
 			}
-		/*CRUD completo con informe de historia */
+			static public function ctrHistoriaController($parametroNuevo){
+				    $tbl= "auxcitasconsiguientes";
+					$postVaribles = HistorialModel::mdlHistoriaModel($parametroNuevo,$tbl);
+					return($postVaribles);
+					
+				}
 		public function consultaPacientesGeneralController()
 			{
 			   $consultaPacienteTable = HistorialModel::consultaPacientesGeneralModel("historialpaciente");
@@ -150,6 +154,13 @@ class HistorialController{
 						                  NINGUN REGISTRO...!
 						                </blockquote>";
 						            }
-						          }
+								  }
+		static public function ctrIngresoCita($variables){
+			if(isset($_POST)){
+				$tabla = "auxcitasconsiguientes";
+				$ingresoCita = HistorialModel::mdlIngresoCita($tabla,$variables);
+				return $ingresoCita;
+			}
+		}
 	}
-?>
+

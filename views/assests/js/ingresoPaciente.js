@@ -9,7 +9,6 @@ $(document).ready(function(){
 /* -------------------------------------------------------------------------- */
 /*                                 FIN FECHAS                                 */
 /* -------------------------------------------------------------------------- */
-
 	var enfermedadesDatos=[];
 	$(".enfermedadescheck").click(function() {
   	enfermedadesDatos.length=0;
@@ -81,12 +80,9 @@ $(document).ready(function(){
       }
     });
     $("#Onicorrexis").val(Onicorrexis)
-    });
-    
+    }); 
 });
-
 $("#btnGuardar").click(function(){
-	
 	var noHistoria = $("#noHistoria").val();
 	var fechaIngresoPaciente = $("#fechaIngresoPaciente").val();
 	var nombrePaciente = $("#nombrePaciente").val();
@@ -283,16 +279,13 @@ $("#btnGuardar").click(function(){
 $("#btnConsultar").click(function(){
 	var parametroBus = $("#parametroBus").val();
 	var parametro = {parametroBus:parametroBus};
-	console.log("parametroBus",parametroBus)
 	$.ajax({
 		url:"views/ajax/PacienteAjax.php",
 		method: "POST",
 		data: parametro,
 		dataType: "json",
 		success:function(datos) {
-			console.log("datos",datos);
 			if (datos) {
-
 				$("#nombrePaciente").val(datos['nombrePaciente']);
 				$("#noHistoria").val(datos['noHistoria']);
 				$("#fechaIngresoPacienteC").val(datos['fechaIngresoPaciente']);
@@ -376,39 +369,39 @@ $("#btnConsultar").click(function(){
 /* -------------------------------------------------------------------------- */
 /*                              5. PIE DIABETICO: PIE                             */
 /* -------------------------------------------------------------------------- */
-					$("#amputacion").html(datos["amputacion"]);
-					$("#amputaciondet").val(datos["amputaciondet"]);
-					$("#dedosDeformados").html(datos["dedosDeformados"]);
-					$("#dedosDeformadosDet").val(datos["dedosDeformadosDet"]);
-					$("#Helomasblandos").html(datos["Helomasblandos"]);
-					$("#HelomasblandosDet").val(datos["HelomasblandosDet"]);
-					$("#Helomasduros").html(datos["Helomasduros"]);
-					$("#HelomasdurosDet").val(datos["HelomasdurosDet"]);
-					$("#Piedeformado").html(datos["Piedeformado"]);
-					$("#PiedeformadoDet").val(datos["PiedeformadoDet"]);
-					$("#Ulcera").html(datos["Ulcera"]);
-					$("#UlceraDet").val(datos["UlceraDet"]);
-					$("#vacunaTetanos").html(datos["vacunaTetanos"]);
-					$("#vacunaTetanosDet").val(datos["vacunaTetanosDet"]);
-					$("#calzadoApropiado").html(datos["calzadoApropiado"]);
-					$("#calzadoApropiadoDet").val(datos["calzadoApropiadoDet"]);
-					$("#medidasApropiadas").html(datos["medidasApropiadas"]);
-					$("#medidasApropiadasDet").val(datos["medidasApropiadasDet"]);
-					$("#corteUnasAdecuado").html(datos["corteUnasAdecuado"]);
-					$("#corteUnasAdecuadoDet").val(datos["corteUnasAdecuadoDet"]);
-					$("#higinePie").html(datos["higinePie"]);
-					$("#higinePieDet").val(datos["higinePieDet"]);
-					$("#caminaDescalzo").html(datos["caminaDescalzo"]);
-					$("#caminaDescalzoDet").val(datos["caminaDescalzoDet"]);
-					$("#tratamientoDiabetico").html(datos["tratamientoDiabetico"]);
+				$("#amputacion").html(datos["amputacion"]);
+				$("#amputaciondet").val(datos["amputaciondet"]);
+				$("#dedosDeformados").html(datos["dedosDeformados"]);
+				$("#dedosDeformadosDet").val(datos["dedosDeformadosDet"]);
+				$("#Helomasblandos").html(datos["Helomasblandos"]);
+				$("#HelomasblandosDet").val(datos["HelomasblandosDet"]);
+				$("#Helomasduros").html(datos["Helomasduros"]);
+				$("#HelomasdurosDet").val(datos["HelomasdurosDet"]);
+				$("#Piedeformado").html(datos["Piedeformado"]);
+				$("#PiedeformadoDet").val(datos["PiedeformadoDet"]);
+				$("#Ulcera").html(datos["Ulcera"]);
+				$("#UlceraDet").val(datos["UlceraDet"]);
+				$("#vacunaTetanos").html(datos["vacunaTetanos"]);
+				$("#vacunaTetanosDet").val(datos["vacunaTetanosDet"]);
+				$("#calzadoApropiado").html(datos["calzadoApropiado"]);
+				$("#calzadoApropiadoDet").val(datos["calzadoApropiadoDet"]);
+				$("#medidasApropiadas").html(datos["medidasApropiadas"]);
+				$("#medidasApropiadasDet").val(datos["medidasApropiadasDet"]);
+				$("#corteUnasAdecuado").html(datos["corteUnasAdecuado"]);
+				$("#corteUnasAdecuadoDet").val(datos["corteUnasAdecuadoDet"]);
+				$("#higinePie").html(datos["higinePie"]);
+				$("#higinePieDet").val(datos["higinePieDet"]);
+				$("#caminaDescalzo").html(datos["caminaDescalzo"]);
+				$("#caminaDescalzoDet").val(datos["caminaDescalzoDet"]);
+				$("#tratamientoDiabetico").html(datos["tratamientoDiabetico"]);
 			}else if(datos === false){
 				alert("Es posible que el campo de busqueda se encuentre vacio");
 				window.location = "consultaHistorial";
 			}
-			
 		}
 	});
 });
+
 $('#tableData').DataTable({
 				  "responsive":true,
 					    "destroy":true,
@@ -448,14 +441,13 @@ $(document).on("click",".btnAgregarCita",function(){
 	 
 })
 $(document).on("click",".btnGuadarCita",function(){
-	var noHistoriaNueva = $("#noHistoriaNueva").val(noHistoria);
+	var noHistoriaNueva = $("#noHistoriaNueva").val();
 	var fechaConsulta = $("#fechaConsulta").val();
 	var diagnostico = $("#diagnostico").val();
 	var procedimiento = $("#procedimiento").val();
 	var prescripcion = $("#prescripcion").val();
 	var fechaControlProximo = $("#fechaControlProximo").val();
-	var parametros = {
-		noHistoriaNueva:noHistoriaNueva,
+	var parametros = {noHistoriaNueva:noHistoriaNueva,
 		fechaConsulta:fechaConsulta,
 		diagnostico:diagnostico,
 		procedimiento:procedimiento,
@@ -468,9 +460,66 @@ $(document).on("click",".btnGuadarCita",function(){
 		data: parametros,
 		dataType: "json",
 		success:function(datos) {
-			console.log(datos);
+			if(datos){
+				swal("Ingreso de siguiente cita exitoso");
+			}
 		}
-
 	})
-	
+})
+$(document).on("keyup","#parametroBus",function(){
+	var value = $(this).val();
+	$("#parametroNuevo").val(value);
+})
+$(".btnSegundaConsulta").click(function(){
+	var parametroNuevo = $("#parametroNuevo").val();
+	var parametros = {parametroNuevo:parametroNuevo};
+	$.ajax({
+		url:"views/ajax/PacienteAjax.php",
+		method: "POST",
+		data: parametros,
+		dataType: "json",
+		success:function(datos) {
+
+			$('#TblCita').DataTable({
+				responsive: true,
+				destroy:true,
+				lengthMenu: [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
+				data : datos,
+				columns: [
+					{data : datos["noHistoria"]},
+					{data : datos["fechaConsulta"]},
+					{data : datos["diagnostico"]},
+					{data : datos["procedimiento"]},	
+					{data : datos["prescripcion"]},
+					{data : datos["fechaControlProximo"]},
+					{defaultContent:"<button type='button' class='EditarPaciente btn btn-warning' data-toggle='modal' data-target='#modalModificaPaciente'><i class='fa fa-pencil'></i></button>"},
+      				{defaultContent:"<button type='button' class='eliminarPaciente btn btn-danger' data-toggle='modal' data-target='#eliminaPaciente' id='eliminarPaciente'><i class='fa fa-close'></i></button>"}
+				],
+				"language": {
+				"sProcessing":     "Procesando...",
+				"sLengthMenu":     "Mostrar _MENU_ registros",
+				"sZeroRecords":    "No se encontraron resultados",
+				"sEmptyTable":     "Ningún dato disponible en esta tabla",
+				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+				"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+				"sInfoPostFix":    "",
+				"sSearch":         "Buscar:",
+				"sUrl":            "",
+				"sInfoThousands":  ",",
+				"sLoadingRecords": "Cargando...",
+				"oPaginate": {
+				  "sFirst":    "Primero",
+				  "sLast":     "Último",
+				  "sNext":     "Siguiente",
+				  "sPrevious": "Anterior"
+				},
+				"oAria": {
+				  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+				  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+				}
+				}
+				});
+		}
+	});
 })

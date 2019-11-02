@@ -109,6 +109,13 @@ class HistorialModel extends ConexionBD{
 			}
 			$stmt -> close();
 		}
+		static public function mdlHistoriaModel($parametroNuevo, $tbl){
+			$stmt = ConexionBD::conectar()->prepare("SELECT noHistoria,fechaConsulta,diagnostico,
+			procedimiento,prescripcion,fechaControlProximo FROM $tbl WHERE noHistoria = :noHistoria");
+			$stmt -> bindParam(":noHistoria",$parametroNuevo["parametroNuevo"]);
+			$stmt -> execute();
+			return $stmt -> fetchAll();
+		}
 		static public function consultaExistenciaPacienteModel($variables, $tabla){
 			$stmt = ConexionBD::conectar()->prepare("SELECT noHistoria FROM $tabla WHERE noHistoria = :noHistoria");
 			$stmt -> bindParam(":noHistoria",$variables["noHistoria"]);
@@ -128,6 +135,24 @@ class HistorialModel extends ConexionBD{
       	   $statement->execute();
       	return $statement->fetch();
       	$statement->close();
-        }
+		}
+		static public function mdlIngresoCita($tabla,$variables){
+			$Sql = ConexionBD::conectar()->prepare("INSERT INTO $tabla 
+			(noHistoria,fechaConsulta,diagnostico,procedimiento,prescripcion,fechaControlProximo)
+			VALUES
+			(:noHistoria,:fechaConsulta,:diagnostico,:procedimiento,:prescripcion,:fechaControlProximo)");
+
+			$Sql -> bindParam("noHistoria", $variables["noHistoria"]);		
+			$Sql -> bindParam("fechaConsulta", $variables["fechaConsulta"]);
+			$Sql -> bindParam("diagnostico", $variables["diagnostico"]);
+			$Sql -> bindParam("procedimiento", $variables["procedimiento"]);
+			$Sql -> bindParam("prescripcion", $variables["prescripcion"]);
+			$Sql -> bindParam("fechaControlProximo", $variables["fechaControlProximo"]);
+			if($Sql->execute()){
+				echo 1;
+			}else{
+				echo 0;
+			}
+		}
 }
 ?>

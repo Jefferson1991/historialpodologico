@@ -8,25 +8,21 @@ include "navegacionPodo.php";
 	<div class="row">
 		<div class="col-md-12"><hr></div>
 			<div class="col-md-6">
-					<div class="input-group">
-						<input  class="form-control" type="text" name="parametroBus" id="parametroBus" placeholder="Ingrese el parametro de busqueda" value="1722576202">
-						<span class="input-group-btn">
-						<button class="btn btn-info" type="button" id="btnConsultar">Buscar paciente</button>
-						</span>
-					</div>	
+				<div class="input-group">
+				<input  class="form-control" type="text" name="parametroBus" id="parametroBus" placeholder="Ingrese el parametro de busqueda" value="1722576202">
+				<input type="hidden" name="parametroNuevo" id="parametroNuevo" value="1722576202">
+					<div class="input-group-append">
+					<button class="btn btn-info btnSegundaConsulta" type="button" id="btnConsultar">Buscar paciente</button>
+					</div>
+				</div>
+				<hr>
 			</div>
 			<div class="mx-auto" style="width: 200px;">
 			<button type="button" class="btn btn-warning btn-block" onclick="print();"><i class="fa fa-print"></i></button>
 		    </div>
 			<div class="mx-auto" style="width: 200px;">
 			<button type="button" class="btn bg-dark text-white btn-block btnAgregarCita" data-toggle="modal" data-target=".bsIngresoCitas"><i class="fa fa-pencil"></i></button>
-		    </div>
-	</div>
-	<hr>	
-				<?php
-				 $consultaIndividual = new HistorialController();
-				 $consultaIndividual -> consultaHistoriaController();
-				?>
+		    </div>	
 				<div class="row">
 					<div class="col-md-12">
 						<div class="card">
@@ -354,9 +350,33 @@ include "navegacionPodo.php";
 							<!--<div class="card-footer ard bg-dark text-white">Campos ingresados por:</div>-->
 						</div>
 					</div>
+				
+				
 				</div>
-				<br><br><br><br>
+				<br>
+				<div class="col-md-12 table container-fluid">
+				<table class="table table-striped table-hover table-responsive" id="TblCita">
+				<thead class="thead-dark">
+				<tr>
+					<th>No. historia</th>
+					<th>fechaConsulta</th>
+					<th>diagnostico</th>
+					<th>procedimiento</th>
+					<th>prescripcion</th>
+					<th>fechaControlProximo</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
+				</tr>
+				</thead>
+				<tbody>
+				
+				
+				</tbody>
+				</thead>
+				</table>
+				</div>
 </div>
+
 	<!---Modal ingreso de siguiente cita --->
 	<div class="modal fade bsIngresoCitas" id="modal-id">
 				<div class="modal-dialog">
@@ -366,7 +386,7 @@ include "navegacionPodo.php";
 						</div>
 						<div class="modal-body">
 						<form method="post">
-						<input type="text" class="form-control" id="noHistoriaNueva" name="noHistoriaNueva">
+						<input type="hidden" class="form-control" id="noHistoriaNueva" name="noHistoriaNueva">
 						<div class="row">
 								<div class="alert alert-info">
 									<strong>Ingreso de siguiente consulta!</strong> Información importante
@@ -389,15 +409,15 @@ include "navegacionPodo.php";
 										<span class="input-group-text"><i class="fa fa-bookmark"></i></span>
 									</div>
 									<select name="procedimiento" id="procedimiento" class="form-control">
-										<option value="">Seleccione el procedimiento</option>
-										<option value="">Onicotomía</option>
-										<option value="">Profilaxis podal</option>
-										<option value="">Helotomia</option>
-										<option value="">Pulida plantar</option>
-										<option value="">Pedigrafia</option>
-										<option value="">Extrac. Espicula</option>
-										<option value="">Matriceptomia</option>
-										<option value="">Curación</option>
+										<option value="">Seleccione el procedimiento--</option>
+										<option value="Onicotomía">Onicotomía</option>
+										<option value="Profilaxis podal">Profilaxis podal</option>
+										<option value="Helotomia">Helotomia</option>
+										<option value="Pulida plantar">Pulida plantar</option>
+										<option value="Pedigrafia">Pedigrafia</option>
+										<option value="Extrac. Espicula">Extrac. Espicula</option>
+										<option value="Matriceptomia">Matriceptomia</option>
+										<option value="Curación">Curación</option>
 									</select>
 								</div>
 								<div class="input-group mb-3">
