@@ -15,6 +15,7 @@
 <body class="container" style="background-color: gray;">
     <div>
         <div class="intro">
+            <img href="">
             <h2 class="text-center" style="color:white;">EMPRESA HOSPITAL  DEL PIE</h2>
             <p class="text-center" style="color:white;">Sistema de pacientes en tratamiento podologico</p>
         </div>

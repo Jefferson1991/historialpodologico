@@ -442,6 +442,11 @@ $(document).on("click",".btnAgregarCita",function(){
 	var noHistoria = $("#parametroBus").val();
 	$("#noHistoriaNueva").val(noHistoria);
 })
+$(document).on("click",".ImprimirCita",function(){
+	var noHistoria = $("#parametroBus").val();
+	$('#aGH').attr('href','tcpdf/pdf/pdf.php?=su'+noHistoria);
+	
+})
 $(document).on("click",".btnGuadarCita",function(){
 	var noHistoriaNueva = $("#noHistoriaNueva").val();
 	var fechaConsulta = $("#fechaConsulta").val();

@@ -17,7 +17,7 @@ include "navegacionPodo.php";
 				<hr>
 			</div>
 			<div class="mx-auto" style="width: 200px;">
-			<button type="button" class="btn btn-warning btn-block" onclick="print();"><i class="fa fa-print"></i></button>
+			<a type="button" class="btn btn-warning btn-block ImprimirCita" target="_blank" href="" id="aGH"><i class="fa fa-print"></i></a>
 		    </div>
 			<div class="mx-auto" style="width: 200px;">
 			<button type="button" class="btn bg-dark text-white btn-block btnAgregarCita" data-toggle="modal" data-target=".bsIngresoCitas"><i class="fa fa-pencil"></i></button>
